@@ -60,17 +60,17 @@ LLM（Language Model）のますます一般的な使用事例の1つは「チ�
 このコードを実行する場合は[リポジトリでアクセスをリクエスト](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)する必要があります。
 
 ```python
->> from transformers import AutoTokenizer
->> tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+>>> from transformers import AutoTokenizer
+>>> tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
 
->> chat = [
+>>> chat = [
 ...   {"role": "user", "content": "Hello, how are you?"},
 ...   {"role": "assistant", "content": "I'm doing great. How can I help you today?"},
 ...   {"role": "user", "content": "I'd like to show off how chat templating works!"},
 ... ]
 
->> tokenizer.use_default_system_prompt = False
->> tokenizer.apply_chat_template(chat, tokenize=False)
+>>> tokenizer.use_default_system_prompt = False
+>>> tokenizer.apply_chat_template(chat, tokenize=False)
 "<s>[INST] Hello, how are you? [/INST] I'm doing great. How can I help you today? </s><s>[INST] I'd like to show off how chat templating works! [/INST]"
 ```
 
